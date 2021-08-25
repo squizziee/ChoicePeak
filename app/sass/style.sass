@@ -1,4 +1,4 @@
-$navbar-height: 75px
+$navbar-height: 65px
     
 body
     margin: 0
@@ -18,10 +18,46 @@ header
         height: $navbar-height
         border-right: .5px solid rgba(#000, .075)
     .logo_section
-        width: calc(100% - #{$navbar-height * 2})
+        width: calc(100% - #{$navbar-height * 5})
         height: $navbar-height
-        background: #000
-    .acccount_avatar_section
-        width: $navbar-height
+    .account_data_section
+        width: $navbar-height * 3
         height: $navbar-height
         border-left: .5px solid rgba(#000, .075)
+        display: flex
+        justify-content: center
+        flex-direction: column
+        span
+            font-family: 'Poppins', sans-serif
+            display: block
+            margin-left: 21px
+            line-height: 15px
+        .account_name
+            text-transform: uppercase
+            color: #000
+            font-weight: 500
+            font-size: 14px
+            .status
+                font-size: 10px
+                padding: 2px 4px
+                display: inline-block
+                background: #fcc400
+                color: #fff
+                margin-left: 5px
+                transform: translateY(-2px)
+                border-radius: 2px 
+        .account_name_subtitle
+            color: rgba(#000, .5)
+            font-size: 12px
+    .account_avatar_section
+        width: $navbar-height
+        height: $navbar-height
+        display: flex
+        justify-content: center
+        align-items: center
+        .avatar
+            height: $navbar-height
+            width: $navbar-height
+            border-radius: 50% 0 0 50%
+            background-position: center
+            background-size: cover
