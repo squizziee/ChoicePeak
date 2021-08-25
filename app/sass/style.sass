@@ -1,0 +1,27 @@
+$navbar-height: 75px
+    
+body
+    margin: 0
+    padding: 0
+    background: #fff
+    overflow: hidden
+    user-select: none
+*
+    box-sizing: border-box
+header
+    width: 100%
+    height: $navbar-height
+    box-shadow: 0 0 20px rgba(#000, .075)
+    display: flex
+    .toggle_btn_section
+        width: $navbar-height
+        height: $navbar-height
+        border-right: .5px solid rgba(#000, .075)
+    .logo_section
+        width: calc(100% - #{$navbar-height * 2})
+        height: $navbar-height
+        background: #000
+    .acccount_avatar_section
+        width: $navbar-height
+        height: $navbar-height
+        border-left: .5px solid rgba(#000, .075)
