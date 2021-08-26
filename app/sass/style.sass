@@ -1,4 +1,6 @@
 $navbar-height: 65px
+$burger-menu-width: 18px
+$toggle-btn-width: $navbar-height - ($navbar-height - $burger-menu-width) / 2
     
 body
     margin: 0
@@ -13,12 +15,35 @@ header
     height: $navbar-height
     box-shadow: 0 0 20px rgba(#000, .075)
     display: flex
-    .toggle_btn_section
-        width: $navbar-height
+    .sidebar_toggle_section
+        width: $navbar-height * 1.5 + $toggle-btn-width
         height: $navbar-height
         border-right: .5px solid rgba(#000, .075)
+        display: flex
+        .toggle_btn
+            width: $toggle-btn-width
+            height: $navbar-height
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            .burger_menu
+                span
+                    display: block
+                    height: 2px
+                    width: $burger-menu-width
+                    background: #000
+                    margin: 3px
+        .title
+            width: $navbar-height * 1.5
+            height: $navbar-height
+            display: flex
+            align-items: center
+            justify-content: center
+            font-family: 'Poppins', sans-serif
+            font-size: 14px
+            text-transform: uppercase
     .logo_section
-        width: calc(100% - #{$navbar-height * 5})
+        width: calc(100% - #{$navbar-height * 6.5})
         height: $navbar-height
     .account_data_section
         width: $navbar-height * 3
