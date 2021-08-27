@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet"> 
@@ -12,6 +13,7 @@
 </head>
 <body>
     <header>
+        <img src="/build/svg/logo.svg" alt="Logo" class="logo">
         <section class="sidebar_toggle_section">
             <div class="toggle_btn">
                 <div class="burger_menu">
@@ -24,8 +26,25 @@
                 Menu
             </div>
         </section>
-        <section class="logo_section">
-            <!--Logo, not designed yet-->
+        <section class="search_section">
+            <button class="search_toggle_btn">
+                <img src="/build/svg/logo.svg" alt="searchbutton">
+            </button>
+            <div class="search_bar hidden">
+                <form action="POST">
+                    <input type="search" class="search_field" placeholder="Search for something you really like...">
+                    <div class="search_btn_section">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search_btn_section">
+                        <button>
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </section>
         <section class="account_data_section">
             <span class="account_name">Fucking king<div class="status">CEO</div></span>
@@ -35,5 +54,11 @@
             <div class="avatar" style="background-image: url(build/img/logan-weaver-p0B7ueoZz8E-unsplash.jpg);"></div>
         </section>
     </header>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous">
+    </script>
+    <script src="/build/js/main.min.js"></script>
 </body>
 </html>

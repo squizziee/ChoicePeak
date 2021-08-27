@@ -15,11 +15,30 @@ header
     height: $navbar-height
     box-shadow: 0 0 20px rgba(#000, .075)
     display: flex
+    position: relative
+    .logo
+        position: absolute
+        height: $navbar-height
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 100
     .sidebar_toggle_section
         width: $navbar-height * 1.5 + $toggle-btn-width
         height: $navbar-height
         border-right: .5px solid rgba(#000, .075)
         display: flex
+        cursor: pointer
+        &:hover
+            .toggle_btn
+                .burger_menu
+                    span
+                        background: rgba(#000, .8)
+                        &:nth-child(2)
+                            width: $burger-menu-width * 0.667
+                        &:nth-child(3)
+                            width: $burger-menu-width * 0.333
+            .title
+                color: rgba(#000, .8)
         .toggle_btn
             width: $toggle-btn-width
             height: $navbar-height
@@ -33,6 +52,7 @@ header
                     width: $burger-menu-width
                     background: #000
                     margin: 3px
+                    transition: width .3s ease-in-out
         .title
             width: $navbar-height * 1.5
             height: $navbar-height
@@ -42,9 +62,56 @@ header
             font-family: 'Poppins', sans-serif
             font-size: 14px
             text-transform: uppercase
-    .logo_section
-        width: calc(100% - #{$navbar-height * 6.5})
+            transition: color .3s ease-in-out
+    .search_section
+        width: calc(100% - #{$navbar-height * 5.5 + $toggle-btn-width})
         height: $navbar-height
+        position: relative
+        .search_bar
+            width: 100%
+            height: $navbar-height
+            transition: opacity .5s ease-in-out
+            form
+                width: 100%
+                height: 100%
+                display: flex
+            .search_field
+                height: 100%
+                width: calc(100% - #{$navbar-height + 50px})
+                border: none
+                outline: none
+                font-family: 'Poppins', sans-serif
+                padding-left: 25px
+            .search_btn_section
+                height: $navbar-height
+                display: flex
+                align-items: center
+                justify-content: center
+                &:nth-child(1)
+                    width: 50px
+                &:last-child
+                    width: $navbar-height
+                button
+                    width: 50px
+                    height: 50px
+                    border-radius: 50%
+                    background: #fff
+                    border: .5px solid rgba(#000, .075)
+                    outline: none
+                    font-size: 20px
+                    cursor: pointer
+                    transition: .2s ease-in-out
+                    &:active
+                        box-shadow: inset 0 0 10px rgba(#000, .75)
+        .search_toggle_btn
+            position: absolute
+            width: $navbar-height
+            height: $navbar-height
+            border: none
+            outline: none
+            background: #fff
+            transition: opacity .3s ease-in-out
+            cursor: pointer
     .account_data_section
         width: $navbar-height * 3
         height: $navbar-height
@@ -81,8 +148,11 @@ header
         justify-content: center
         align-items: center
         .avatar
-            height: $navbar-height
-            width: $navbar-height
-            border-radius: 50% 0 0 50%
+            height: 50px
+            width: 50px
+            border-radius: 50%
             background-position: center
             background-size: cover
+.hidden
+    opacity: 0
+    pointer-events: none
