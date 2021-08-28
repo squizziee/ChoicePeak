@@ -4,13 +4,12 @@ $toggle-btn-width: $navbar-height - ($navbar-height - $burger-menu-width) / 2
 $default-border: .5px solid rgba(#000, .075)
 $regular-text-font: 'Poppins', sans-serif
 $default-box-shadow-color: rgba(#000, .075)
+$sidebar-width: 300px
     
 body
     margin: 0
     padding: 0
     background: #fff
-    overflow: hidden
-    user-select: none
 *
     box-sizing: border-box
 header
@@ -29,9 +28,12 @@ header
     .sidebar_toggle_section
         width: $navbar-height * 1.5 + $toggle-btn-width
         height: $navbar-height
+        border: none
         border-right: $default-border
         display: flex
         cursor: pointer
+        outline: none
+        background: #fff
         &:hover
             .toggle_btn
                 .burger_menu
@@ -172,3 +174,68 @@ header
 .hidden
     opacity: 0
     pointer-events: none
+.sidebar
+    height: 100vh
+    width: $sidebar-width
+    background: #000
+    position: fixed
+    left: -$sidebar-width
+    transition: left .3s ease-in-out
+    &_active
+        left: 0
+    &_option
+        display: block
+        width: 100%
+        height: $navbar-height
+        display: flex
+        align-items: center
+        padding-left: 20px
+        img
+            height: 40px
+            position: absolute
+            right: 25px
+            display: none
+        a
+            text-decoration: none
+            font-size: 25px
+            color: #fff
+            font-family: 'Staatliches', cursive
+            &:hover
+                &::before
+                    opacity: 1
+                &::after
+                    opacity: 1
+            &::before
+                content: '['
+                opacity: 0
+                transition: opacity .2s ease-in-out
+            &::after
+                content: ']'
+                opacity: 0
+                transition: opacity .2s ease-in-out
+        &_active
+            background: #fff
+            img
+                display: block
+            a
+                color: #000
+.wrapper
+    transition: transform .3s ease-in-out
+    &_active
+        transform: translateX($sidebar-width)
+.feed
+    width: 100%
+    .floor
+        height: 400px
+        width: 100%
+        display: flex
+        &:nth-child(even)
+            flex-direction: row-reverse
+        .post
+            height: 100%
+            &:nth-child(1)
+                width: 40%
+                background: #f0f
+            &:nth-child(2)
+                width: 60%
+                background: #0f0

@@ -1,4 +1,4 @@
- $("#search_toggle_btn").on("click", function() {
+ $("#open_search_bar").on("click", function() {
      $(this).addClass("hidden");
      setTimeout(function() {
         $(".logo").addClass("hidden");
@@ -15,6 +15,11 @@
         $(".logo").removeClass("hidden");
     }, 500);
     setTimeout(function() {
-        $("#search_toggle_btn").removeClass("hidden");
+        $("#open_search_bar").removeClass("hidden");
     }, 750);
+})
+
+$("#toggle_sidebar").on("click", function() {
+    $("#sidebar").toggleClass("sidebar_active");
+    $("#wrapper").toggleClass("wrapper_active");
 })

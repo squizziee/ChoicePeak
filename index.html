@@ -12,48 +12,78 @@
     <title>Feed | ChoicePeak</title>
 </head>
 <body>
-    <header>
-        <img src="/build/svg/logo.svg" alt="Logo" class="logo">
-        <section class="sidebar_toggle_section">
-            <div class="toggle_btn">
-                <div class="burger_menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <section class="sidebar" id="sidebar">
+        <div class="sidebar_option sidebar_option_active">
+            <a href="#">Feed</a>
+            <img src="/build/svg/logo.svg" alt="active">
+        </div>
+        <div class="sidebar_option">
+            <a href="#">Subscriptions</a>
+        </div>
+        <div class="sidebar_option">
+            <a href="#">My posts</a>
+        </div>
+        <div class="sidebar_option">
+            <a href="#">History</a>
+        </div>
+        <div class="sidebar_option">
+            <a href="#">Settings</a>
+        </div>
+    </section>
+    <div class="wrapper" id="wrapper">
+        <header>
+            <img src="/build/svg/logo.svg" alt="Logo" class="logo">
+            <button class="sidebar_toggle_section" id="toggle_sidebar">
+                <div class="toggle_btn">
+                    <div class="burger_menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-            </div>
-            <div class="title">
-                Menu
-            </div>
-        </section>
-        <section class="search_section">
-            <button class="search_toggle_btn"  id="search_toggle_btn">
-                <img src="/build/svg/search_icon.svg" alt="search_icon">
+                <div class="title">
+                    Menu
+                </div>
             </button>
-            <div class="search_bar hidden">
-                <form action="POST">
-                    <input type="search" class="search_field" placeholder="Search for something you really like...">
-                    <div class="search_btn_section">
-                        <button type="submit">
-                            <img src="/build/svg/search_icon.svg" alt="search_icon">
-                        </button>
-                    </div>
-                    <div class="search_btn_section">
-                        <button id="close_search_bar">
-                            <img src="/build/svg/cross.svg" alt="close_icon">
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <section class="search_section">
+                <button class="search_toggle_btn"  id="open_search_bar">
+                    <img src="/build/svg/search_icon.svg" alt="search_icon">
+                </button>
+                <div class="search_bar hidden">
+                    <form action="POST">
+                        <input type="search" class="search_field" placeholder="Search for something you really like...">
+                        <div class="search_btn_section">
+                            <button type="submit">
+                                <img src="/build/svg/search_icon.svg" alt="search_icon">
+                            </button>
+                        </div>
+                        <div class="search_btn_section">
+                            <button id="close_search_bar">
+                                <img src="/build/svg/cross.svg" alt="close_icon">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="account_data_section">
+                <span class="account_name">Cristopher<div class="status">CEO</div></span>
+                <span class="account_name_subtitle">CEO of ChoicePeak</span>
+            </section>
+            <section class="account_avatar_section">
+                <div class="avatar" style="background-image: url(build/img/logan-weaver-p0B7ueoZz8E-unsplash.jpg);"></div>
+            </section>
+        </header>
+        <section class="feed">
+            <section class="floor">
+                <section class="post">
+                    1
+                </section>
+                <section class="post">
+                    2
+                </section>
+            </section>
         </section>
-        <section class="account_data_section">
-            <span class="account_name">Cristopher<div class="status">CEO</div></span>
-            <span class="account_name_subtitle">CEO of ChoicePeak</span>
-        </section>
-        <section class="account_avatar_section">
-            <div class="avatar" style="background-image: url(build/img/logan-weaver-p0B7ueoZz8E-unsplash.jpg);"></div>
-        </section>
-    </header>
+    </div>
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.min.js"
 			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
