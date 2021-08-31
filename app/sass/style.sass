@@ -3,6 +3,7 @@ $burger-menu-width: 18px
 $toggle-btn-width: $navbar-height - ($navbar-height - $burger-menu-width) / 2
 $default-border: .5px solid rgba(#000, .075)
 $regular-text-font: 'Poppins', sans-serif
+$title-font: 'Staatliches', cursive
 $default-box-shadow-color: rgba(#000, .075)
 $sidebar-width: 300px
     
@@ -10,6 +11,7 @@ body
     margin: 0
     padding: 0
     background: #fff
+    overflow-x: hidden
 *
     box-sizing: border-box
 header
@@ -147,15 +149,6 @@ header
             color: #000
             font-weight: 500
             font-size: 14px
-            .status
-                font-size: 10px
-                padding: 2px 4px
-                display: inline-block
-                background: #ffc400
-                color: #fff
-                margin-left: 5px
-                transform: translateY(-2px)
-                border-radius: 2px 
         .account_name_subtitle
             color: rgba(#000, .5)
             font-size: 12px
@@ -171,6 +164,15 @@ header
             border-radius: 50%
             background-position: center
             background-size: cover
+.status
+    font-size: 10px
+    padding: 0 3px
+    display: inline-block
+    background: #797367
+    color: #fff
+    margin-left: 5px
+    transform: translateY(-2px)
+    border-radius: 2px 
 .hidden
     opacity: 0
     pointer-events: none
@@ -221,6 +223,7 @@ header
                 color: #000
 .wrapper
     transition: transform .3s ease-in-out
+    overflow: hidden
     &_active
         transform: translateX($sidebar-width)
 .feed
@@ -235,7 +238,92 @@ header
             height: 100%
             &:nth-child(1)
                 width: 40%
-                background: #f0f
+                .text
+                    border-right: $default-border
+                    border-left: $default-border
             &:nth-child(2)
                 width: 60%
-                background: #0f0
+            .image
+                width: 100%
+                height: 37.5%
+                background: #222
+                background-size: cover
+                background-position: center
+            .text
+                width: 100%
+                height: 62.5%
+                position: relative
+                .first_floor
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    padding: 20px 20px 16px 20px
+                    border-bottom: $default-border
+                    .title
+                        font-family: $title-font
+                        font-size: 35px
+                        line-height: 30px
+                    .author
+                        font-family: $regular-text-font
+                        color: #999
+                        font-size: 15px
+                        line-height: 15px
+                .second_floor
+                    display: flex
+                    width: 100%
+                    position: relative
+                    .votes
+                        font-family: $title-font
+                        font-size: 25px
+                        flex: 2
+                        padding: 15px 20px
+                    .rating
+                        flex: 1
+                        display: flex
+                        align-items: center
+                        justify-content: space-evenly
+                        max-width: 243px
+                        i
+                            display: block
+                            font-size: 20px
+                .third_floor
+                    position: absolute
+                    width: 100%
+                    bottom: 0
+                    display: flex
+                    .time_and_tags
+                        flex: 3
+                        .post_tags
+                            padding: 20px 20px 2.5px 20px
+                            span
+                                font-size: 12px
+                                padding: 3px 10px
+                                display: inline-block
+                                background: #797367
+                                color: #fff
+                                border-radius: 2px
+                                font-family: $regular-text-font 
+                                margin-right: 5px
+                        .time_left
+                            font-family: $title-font
+                            padding: 0px 20px 20px 20px
+                            font-size: 25px
+                    .buttons
+                        position: relative
+                        flex: 2
+                        .button_wrapper
+                            padding: 20px
+                            width: 100%
+                            position: absolute
+                            bottom: 0
+                            display: flex
+                            justify-content: space-evenly
+                            span
+                                font-family: $regular-text-font
+                                text-transform: uppercase
+                                cursor: pointer
+                            i
+                                line-height: 22px
+                                cursor: pointer
+                        
+                        
